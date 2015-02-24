@@ -1,2 +1,0 @@
-remove-module virtualenvwrapper
-import-module virtualenvwrapper
