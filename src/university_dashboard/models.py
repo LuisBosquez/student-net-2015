@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from django.contrib.auth.models import User
 # Create your models here, yo!
 
 class University(models.Model):
@@ -44,12 +44,14 @@ class Student(models.Model):
 		('FI', 'Finance'),
 		('MK', 'Marketing')
 	)
+	user = models.ForeignKey(User, unique=True)
 	university = models.ForeignKey(University)
 	studentGroup = models.ForeignKey(StudentGroup)
 	
 	name = models.CharField(max_length = 200, default="Some student")
 	email = models.CharField(max_length = 200, default = "email@university.edu")
 	major = models.CharField(max_length = 200, choices = STUDENT_MAJOR_CHOICES)
+	profile_picture = models.ImageField(upload_to='thumbpath', blank=True)
 	
 	def __str__(self):
 		return self.name
