@@ -1,0 +1,13 @@
+{% extends 'components/base.html' %}
+{% block content %}
+<h1 class="page-header">Tareas</h1>
+
+{% for task in tasks %}
+	<h1>{{task.title}}</h1>
+	<h1>{{task.description}}</h1>
+	<h1>{{task.dueDate}}</h1>
+	
+{% endfor %}
+
+
+{% endblock %}

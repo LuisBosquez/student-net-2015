@@ -7,6 +7,12 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'university_dashboard.views.home', name='home'),
 	url(r'^about/', 'university_dashboard.views.about', name='about'),
+	url(r'^calendar/', 'university_dashboard.views.calendar', name='calendar'),
+	url(r'^groups/', 'university_dashboard.views.groups', name='groups'),
+	url(r'^members/', 'university_dashboard.views.members', name='members'),
+	url(r'tasks/$', 'university_dashboard.views.tasks', name='tasks'),
+	
+	url(r'^tasks/new/$', 'task_manager.views.createTask', name='createTask'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),

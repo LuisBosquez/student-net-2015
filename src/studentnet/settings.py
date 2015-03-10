@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'university_dashboard',
+	'task_manager',
 )
 
 MIDDLEWARE_CLASSES = (

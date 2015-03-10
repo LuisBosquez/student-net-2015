@@ -1,28 +1,85 @@
 {% extends 'components/base.html' %}
 	{% block content %}
-
-
-<div class="container-fluid">
-  <div class="row">
+<script>
+	var days = {
+	  day: 5,
+	  classes: "day",
+	  events: [],
+	  date: moment("2013-05-29")
+	}
 	
-	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-	  <h1 class="page-header">Dashboard</h1>
+	events = [
+	  { date: "YYYY-MM-DD or some other ISO Date format", and: "anything else" }
+	]
+	
+</script>
+  
+  <h1 class="page-header">Dashboard</h1>
 
-		<div class="row">
-			<div class="col-md-6">
-				<h3>Progreso de grupos</h3>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="dashboard-element">
+				<h3>Progreso de tareas</h3>
 				<div id="progress" class="ct-chart ct-major-second"></div>
-			</div>
-			<div class="col-md-6">
-				<h3>Uso de presupuesto</h3>
-				<div id="budget" class="ct-chart ct-major-second"></div>
+				<a class="btn btn-default" href="#" role="button">Ver más</a>
 			</div>
 		</div>
-
-	  
+		<div class="col-md-4">
+			<div class="dashboard-element">
+				<h3>Uso de presupuesto</h3>
+				<div id="budget" class="ct-chart ct-major-second"></div>
+				<a class="btn btn-default" href="#" role="button">Ver más</a>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="dashboard-element">
+				<h3>Frecuencia de eventos por grupo</h3>
+				<div id="event-frequency" class="ct-chart ct-major-second"></div>
+				<a class="btn btn-default" href="#" role="button">Ver más</a>
+			</div>
+		</div>
 	</div>
-  </div>
-</div>
+	<div class="row">
+		<div class="col-md-6">
+				<div class="dashboard-element" id="calendar">
+					
+				</div>
+		</div>
+		<div class="col-md-6">
+			<div class="dashboard-element">
+				<h3>Eventos Próximos</h3>
+				<div class="list-group" id="tasks">
+					<li class="list-group-item"><small>20-03-2015</small>Planear juntas de consejo 
+					<a class="fa fa-trash pull-right task-icon"></a>
+					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
+					<a class="fa fa-check-circle-o pull-right task-icon"></a>
+					</li>
+					<li class="list-group-item"><small>25-03-2015</small>Informar grupos acerca de eventos universitarios
+					<a class="fa fa-trash pull-right task-icon"></a>
+					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
+					<a class="fa fa-check-circle-o pull-right task-icon"></a>
+					</li>
+					<li	class="list-group-item"><small>10-04-2015</small>Promoción de plática de director
+					<a class="fa fa-trash pull-right task-icon"></a>
+					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
+					<a class="fa fa-check-circle-o pull-right task-icon"></a>
+					</li>
+					<li class="list-group-item"><small>13-04-2015</small>Confirmar eventos de reclutamiento
+					<a class="fa fa-trash pull-right task-icon"></a>
+					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
+					<a class="fa fa-check-circle-o pull-right task-icon"></a>
+					</li>
+					<li class="list-group-item"><small>20-04-2015</small>Enviar estado financiero Q3
+					<a class="fa fa-trash pull-right task-icon"></a>
+					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
+					<a class="fa fa-check-circle-o pull-right task-icon"></a>
+					</li>
+				</div>
+				<a class="btn btn-default" href="#" role="button">Ver más</a>
+			</div>
+		</div>
+	</div>
+
 
 <script>
 	new Chartist.Line('#progress', {
@@ -45,6 +102,30 @@
 		  data: [0, 0.1, 0.1, 0.2, 0.2, 0.4]
 		}
 	  ]
+	},
+	{
+        // Don't draw the line chart points
+		showPoint: true,
+		// Disable line smoothing
+		lineSmooth: false,
+		// X-Axis specific configuration
+		axisX: {
+			// We can disable the grid for this axis
+			showGrid: false,
+			// and also don't show the label
+			showLabel: true
+		},
+		// Y-Axis specific configuration
+		axisY: {
+			// Lets offset the chart a bit from the labels
+			offset: 60,
+			// The label interpolation function enables you to modify the values
+			// used for the labels on each axis. Here we are converting the
+			// values into million pound.
+			labelInterpolationFnc: function(value) {
+				return Math.floor(value * 100)+ '%';
+			}
+		}
 	});
 	new Chartist.Pie('#budget', {
 	  series: [20, 10, 30, 40],
@@ -63,16 +144,108 @@
 	  ['screen and (min-width: 640px)', {
 		chartPadding: 30,
 		labelOffset: 100,
-		labelDirection: 'explode',
+		labelDirection: 'implode',
 		labelInterpolationFnc: function(value) {
 		  return value;
 		}
 	  }],
 	  ['screen and (min-width: 1024px)', {
 		labelOffset: 80,
-		chartPadding: 100
+		chartPadding: 50
+	}]
+	]
+	);
+	
+	var $chart = $('#progress');
+
+	var $toolTip = $chart
+		.append('<div class="chart-tooltip"></div>')
+		.find('.chart-tooltip')
+		.hide();
+
+	$chart.on('mouseenter', '.ct-point', function() {
+		var $point = $(this),
+			value = $point.attr('ct:value'),
+			seriesName = $point.parent().attr('ct:series-name');
+		$toolTip.html(seriesName + '<br>' + value);
+		$toolTip.show();
+	});
+
+	$chart.on('mouseleave', '.ct-point', function() {
+		$toolTip.hide();
+	});
+
+	$chart.on('mousemove', function(event) {
+		$toolTip.css({
+			left: (event.offsetX || event.originalEvent.layerX) - $toolTip.width() / 2 - 10,
+			top: (event.offsetY || event.originalEvent.layerY) - $toolTip.height() - 40
+		});
+	});
+	
+	
+	// this will use clndr's default template, which you probably don't want.
+	$('#calendar').clndr();
+
+	// so instead, pass in your template as a string!
+	$('#calendar').clndr({
+	  template: '<div class="clndr-controls"><div class="clndr-previous-button">&lsaquo;</div><div class="month"><%= month %></div><div class="clndr-next-button">&rsaquo;</div></div><div class="clndr-grid"><div class="days-of-the-week"><% _.each(daysOfTheWeek, function(day) { %><div class="header-day"><%= day %></div><% }); %><div class="days"><% _.each(days, function(day) { %><div class="<%= day.classes %>"><%= day.day %></div><% }); %></div></div></div>'
+	});
+
+	// there are a lot of options. the rabbit hole is deep.
+	$('#calendar').clndr({
+	  template: $('#calendar-template').html(),
+	  events: [
+		{ date: '2013-09-09', title: 'CLNDR GitHub Page Finished', url: 'http://github.com/kylestetz/CLNDR' }
+	  ],
+	  clickEvents: {
+		click: function(target) {
+		  console.log(target);
+		},
+		onMonthChange: function(month) {
+		  console.log('you just went to ' + month.format('MMMM, YYYY'));
+		}
+	  },
+	  doneRendering: function() {
+		console.log('this would be a fine place to attach custom event handlers.');
+	  }
+	});
+		  
+		  
+	var times = function(n) {
+	  return Array.apply(null, new Array(n));
+	};
+
+
+	new Chartist.Line('#event-frequency', 
+	times(52).map(Math.random).reduce(function(data, rnd, index) {
+	  data.labels.push(index + 1);
+	  data.series.forEach(function(series) {
+		series.push((Math.random() % 2) * 100)
+	  });
+
+	  return data;
+	}, {
+	  labels: [],
+	  series: times(4).map(function() { return new Array() })
+	}), 
+	{
+	  showLine: false,
+	  axisX: {
+		labelInterpolationFnc: function(value, index) {
+		  return index % 13 === 0 ? 'W' + value : null;
+		}
+	  }
+	},
+	[
+	  ['screen and (min-width: 640px)', {
+		axisX: {
+		  labelInterpolationFnc: function(value, index) {
+			return index % 4 === 0 ? 'W' + value : null;
+		  }
+		}
 	  }]
 	]
 	);
+
 </script>
 	{% endblock %}
