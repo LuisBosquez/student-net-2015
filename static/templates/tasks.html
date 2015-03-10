@@ -3,11 +3,50 @@
 <h1 class="page-header">Tareas</h1>
 
 {% for task in tasks %}
-	<h1>{{task.title}}</h1>
+	<!--h1>{{task.title}}</h1>
 	<h1>{{task.description}}</h1>
-	<h1>{{task.dueDate}}</h1>
-	
+	<h1>{{task.dueDate}}</h1-->
 {% endfor %}
 
-
+<div class="row">
+	<ol class="timeline">
+	  <li class="timeline">
+		Organización pre-comienzo de clases
+		<span class="details">
+		  3 - Enero - 2015.<br/>
+		  Definir presupuestos y grupos válidos.
+		</span>
+	  </li>
+	  <li class="timeline">
+		Arranque de actividades
+		<span class="details">
+		  13 - Enero - 2015.<br/>
+		  Junta de arranque<br/>
+		  Solicitud de planes de trabajo
+		</span>
+	  </li>
+	  <li class="timeline">
+		Preparación elecciones
+		<span class="details">
+		  20 - Febrero - 2015.<br/>
+		  Candidatos<br/>
+		  Junta de logística
+		</span>
+	  </li>
+	  <li class="timeline">
+		Elecciones
+		<span class="details">
+		  3 - Marzo - 2015.<br/>
+		  Logística de elecciones
+		</span>
+	  </li>
+	  <li class="timeline">
+		Eventos de Spring-Break
+		<span class="details">
+		  30 - Marzo - 2015.<br/>
+		  Planeación y ejecución
+		</span>
+	  </li>
+	</ol>
+</div>
 {% endblock %}
