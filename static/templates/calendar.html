@@ -1,8 +1,48 @@
 {% extends 'components/base.html' %}
 {% block content %}
 <h1 class="page-header">Calendario</h1>
-
-
-
-
+<script>
+	var days = {
+	  day: 5,
+	  classes: "day",
+	  events: [],
+	  date: moment("2013-05-29")
+	}
+	
+	events = [
+	  { date: "YYYY-MM-DD or some other ISO Date format", and: "anything else" }
+	]
+	
+</script>
+<div class="row">
+	<div class="col-md-9">
+			<div class="dashboard-element" id="calendar">
+				
+			</div>
+	</div>
+</div>
+<script>
+$('#calendar').clndr({
+	  template: $('#calendar-template').html(),
+	  events: [
+		{ date: '2013-09-09', title: 'CLNDR GitHub Page Finished', url: 'http://github.com/kylestetz/CLNDR' }
+	  ],
+	  clickEvents: {
+		click: function(target) {
+		  console.log(target);
+		},
+		onMonthChange: function(month) {
+		  console.log('you just went to ' + month.format('MMMM, YYYY'));
+		}
+	  },
+	  doneRendering: function() {
+		console.log('this would be a fine place to attach custom event handlers.');
+	  }
+	});
+		  
+		  
+	var times = function(n) {
+	  return Array.apply(null, new Array(n));
+	};
+</script>
 {% endblock %}
