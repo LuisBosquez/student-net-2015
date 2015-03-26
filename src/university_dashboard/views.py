@@ -32,3 +32,8 @@ def tasks(request):
 	context = {'title':'Tareas', 'tasks':Task.objects.all()}
 	template = 'tasks.html'
 	return render(request, template, context)
+
+def validate(request):
+	context = {'title':'Validaciones'}
+	template = 'validate.html'
+	return render(request, template, context)

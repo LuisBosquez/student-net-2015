@@ -1,13 +1,16 @@
+	{% load staticfiles %}
 	<div class="col-sm-3 col-md-2 sidebar">
 	  <ul class="nav nav-sidebar">
 		{% url 'home' as home %}
 		{% url 'calendar' as calendar %}
+		{% url 'validate' as validate %}
 		{% url 'groups' as groups %}
 		{% url 'members' as members %}
 		{% url 'tasks' as tasks %}
-		
+		<img src="{{ MEDIA_URL }}images/itesm_logo.png" alt="logo" class="img-circle logo">
 		<li {% if request.path == home %} class="active" {% endif %}><a href="{% url 'home' %}"><i class="fa fa-tachometer"></i>Dashboard</a></li>
-		<li {% if request.path == calendar %} class="active" {% endif %}><a href="{% url 'calendar' %}"><i class="fa fa-calendar"></i>Calendario</a></li>
+		<li {% if request.path == calendar %} class="active" {% endif %}><a href="{% url 'calendar' %}"><i class="fa fa-calendar"></i>Eventos</a></li>
+		<li {% if request.path == validate %} class="active" {% endif %}><a href="{% url 'validate' %}"><i class="fa fa-eye"></i>Validaciones</a></li>
 		<li {% if request.path == groups %} class="active" {% endif %}><a href="{% url 'groups' %}"><i class="fa fa-users"></i>Grupos Estudiantiles</a></li>
 		<!--li {% if request.path == members %} class="active" {% endif %}><a href="{% url 'members' %}"><i class="fa fa-users"></i>Miembros de consejo</a></li-->
 		<li {% if request.path == tasks %} class="active" {% endif %}><a href="{% url 'tasks' %}"><i class="fa fa-check"></i>Tareas</a></li>

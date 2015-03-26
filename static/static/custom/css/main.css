@@ -156,7 +156,15 @@ i.fa
 {
 	display:inline-block;
 	margin:1em;
-	font-size:large;
+	font-size:25px;
+}
+#social-icons > *:hover
+{
+	color:white;
+}
+#social-icons > *:active
+{
+	color:green;
 }
 
 /* ---- Timeline ---- */
@@ -260,8 +268,34 @@ li.timeline:hover::before {
 	border-color: #28e;
 }
 li.timeline:hover .details {
-display: block;
-  color: #444;
-  background: rgba(66,139,202,0.4);
+	display: block;
+	color: #444;
+	background: rgba(66,139,202,0.4);
 }
 
+span.subtype
+{
+	font-weight: bold;
+	color: white;
+}
+
+img.logo
+{
+	width: 70%;
+	margin: 5% 15% 10%;
+}
+
+div.toolbar
+{
+	margin:0.5em 0 0.5em 0;
+}
+
+dl.content
+{
+	margin:15px;
+}
+
+img.content
+{
+	
+}

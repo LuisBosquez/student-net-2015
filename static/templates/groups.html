@@ -1,5 +1,6 @@
 {% extends 'components/base.html' %}
 {% block content %}
+{% load staticfiles %}
 <h1 class="page-header">Grupos</h1>
 
 <div class="row">
@@ -8,8 +9,8 @@
 			<div class="col-md-3">
 				<div class="group-item" id="group-intro">
 					<h3 class="group-header">BNET - <small>Administración</small></h3>
-					<img class="media-object side-image" src="/media/images/student-groups/bnet.jpg" alt="...">
-					<em>Fundado en 1999</em>
+					<img class="media-object side-image" src="{{ MEDIA_URL }}/images/student-groups/bnet.jpg" alt="...">
+					<em>Fundado en 1999 /media/images/student-groups/bnet.jpg</em>
 				</div>
 			</div>
 			<div class="col-md-6">
