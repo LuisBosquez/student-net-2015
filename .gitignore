@@ -41,3 +41,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+.idea/
+src/components/bower_components/
+*.pyc

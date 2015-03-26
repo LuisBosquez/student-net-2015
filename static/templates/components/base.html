@@ -1,3 +1,4 @@
+{% load static %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -12,33 +13,33 @@
     <title>StudentNet</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href='{% static "lib/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+    <link href='{% static "bootstrap/dist/css/bootstrap.min.css" %}' rel="stylesheet">
 	<!-- Chartist CSS -->
-	<link rel="stylesheet" href='{% static "lib/chartist/chartist.min.css" %}'>
+	<link rel="stylesheet" href='{% static "chartist/dist/chartist.min.css" %}'>
 	
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Rosario:400,400italic,700' rel='stylesheet' type='text/css'>
 	
 	<!-- Chartist js -->
-	<script src='{% static "lib/chartist/chartist.min.js" %}'></script>
+	<script src='{% static "chartist/dist/chartist.min.js" %}'></script>
 	
 	<!-- jQuery -->
-    <script src='{% static "lib/jquery/jquery.js" %}'></script>
+   <script type="text/javascript" src='{% static "jquery/dist/jquery.js" %}'></script>
 	
 	<!-- Moment.js -->
-    <script src='{% static "lib/moment/moment.js" %}'></script>
+    <script src='{% static "moment/moment.js" %}'></script>
 	
 	<!-- Underscore.js -->
-    <script src='{% static "lib/underscore/underscore.js" %}'></script>
+    <script src='{% static "underscore/underscore.js" %}'></script>
 
 	<!-- Clndr.js -->
-    <script src='{% static "lib/clndr/clndr.js" %}'></script>
+    <script src='{% static "clndr/src/clndr.js" %}'></script>
 	
     <!-- Bootstrap Core JavaScript -->
-    <script src='{% static "lib/bootstrap/js/bootstrap.min.js"%}'></script>
+    <script src='{% static "bootstrap/dist/js/bootstrap.min.js"%}'></script>
 	
 	<!-- Fontawesome -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='{% static "font-awesome//css/font-awesome.min.css" %}' rel="stylesheet">
 	
 	<!-- Custom CSS -->
 	<link href='{% static "custom/css/simple-sidebar.css" %}'rel="stylesheet">
