@@ -1,6 +1,6 @@
 {% extends 'components/base.html' %}
 {% block content %}
-<h1 class="page-header">Calendario</h1>
+
 <script>
 	var days = {
 	  day: 5,
@@ -15,11 +15,14 @@
 	
 </script>
 <div class="row">
+    <div class="col-md-2">
+        <h1 class="page-header">Calendario</h1>
+    </div>
 	<div class="col-md-9 toolbar">
-		<button type="button" class="btn btn-primary btn-lg">
+		<button type="button" class="btn btn-primary btn-calendar">
 			Agregar
 		</button>
-		<button type="button" class="btn btn-primary btn-lg">
+		<button type="button" class="btn btn-primary btn-calendar">
 			Exportar
 		</button>
 	</div>
@@ -32,35 +35,39 @@
 	</div>
 	<div class="col-md-3">
 		<div class="dashboard-element">
-				<h3>Eventos Próximos</h3>
+				<h3 style="margin-top:10px">Eventos Próximos</h3>
 				<div class="list-group" id="tasks">
-					<li class="list-group-item"><small>20-03-2015</small>Planear juntas de consejo 
+					<li class="list-group-item calendar"><small>20-03-2015</small><br>Planear juntas de consejo <br>
 					<a class="fa fa-trash pull-right task-icon"></a>
 					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
 					<a class="fa fa-check-circle-o pull-right task-icon"></a>
 					</li>
-					<li class="list-group-item"><small>25-03-2015</small>Informar grupos acerca de eventos universitarios
+                    <hr>
+					<li class="list-group-item calendar"><small>25-03-2015</small><br>Junta informativa acerca de eventos<br>
 					<a class="fa fa-trash pull-right task-icon"></a>
 					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
 					<a class="fa fa-check-circle-o pull-right task-icon"></a>
 					</li>
-					<li	class="list-group-item"><small>10-04-2015</small>Promoción de plática de director
+                    <hr>
+					<li	class="list-group-item calendar"><small>10-04-2015</small><br>Promoción de plática de director<br>
 					<a class="fa fa-trash pull-right task-icon"></a>
 					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
 					<a class="fa fa-check-circle-o pull-right task-icon"></a>
 					</li>
-					<li class="list-group-item"><small>13-04-2015</small>Confirmar eventos de reclutamiento
+                    <hr>
+					<li class="list-group-item calendar"><small>13-04-2015</small><br>Confirmar eventos de reclutamiento <br>
 					<a class="fa fa-trash pull-right task-icon"></a>
 					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
 					<a class="fa fa-check-circle-o pull-right task-icon"></a>
 					</li>
-					<li class="list-group-item"><small>20-04-2015</small>Enviar estado financiero Q3
+                    <hr>
+					<li class="list-group-item calendar"><small>20-04-2015</small><br>Enviar estado financiero Q3<br>
 					<a class="fa fa-trash pull-right task-icon"></a>
 					<a class="fa fa-pencil-square-o pull-right task-icon"></a>
 					<a class="fa fa-check-circle-o pull-right task-icon"></a>
 					</li>
 				</div>
-				<a class="btn btn-default" href="#" role="button">Ver más</a>
+				<a class="btn btn-default" href="#" role="button" style="margin-top:10px">Ver más</a>
 			</div>
 	</div>
 </div>

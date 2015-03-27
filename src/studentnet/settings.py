@@ -74,6 +74,7 @@ BOWER_INSTALLED_APPS = (
     'underscore',
     'moment',
     'clndr',
+    'jquery-collagePlus',
 )
 
 ROOT_URLCONF = 'studentnet.urls'

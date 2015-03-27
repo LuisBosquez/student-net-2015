@@ -6,6 +6,7 @@ h1, h2, h3, p, a, small
 body
 {
 	font-size:16px;
+	background-color: rgb(232, 235, 240);
 }
 
 small
@@ -33,7 +34,7 @@ text	.ct-label
 
 .dashboard-element
 {
-	background:rgba(169,188,208,0.6);
+	background:white;
 	padding:1.5em;
     border-radius: 5px;
 	text-align:center;
@@ -43,6 +44,22 @@ text	.ct-label
 		font-weight:400;
 	}
 .dashboard-element:hover
+{
+	background:white;
+}
+
+.dashboard-element-white
+{
+	background:white;
+	padding:1.5em;
+    border-radius: 5px;
+	text-align:center;
+}
+	.dashboard-element-white h3
+	{
+		font-weight:400;
+	}
+.dashboard-element-white:hover
 {
 	background:rgba(169,188,208,1);
 }
@@ -296,7 +313,7 @@ div.toolbar
 
 dl.content
 {
-	margin:15px;
+	margin:5px;
 }
 
 img.content
@@ -304,7 +321,7 @@ img.content
 	
 }
 
-* In your CSS */
+/* In your CSS */
 .Collage
 {
     padding:14px;
@@ -325,8 +342,8 @@ img.content
 
 div.post
 {
-	background:#F5F5F5;
-	margin:1em;
+
+	margin:0 1em;
 }
 
 img.media-object
@@ -344,7 +361,8 @@ img.media-object
 }
 
 .navbar-inverse .navbar-nav>li>a:hover{
-    color: #9d9d9d;
+    color: white;
+    font-weight: bold;
 }
 
 .navbar-inverse .navbar-brand{
@@ -386,4 +404,80 @@ h4{
 
 .snippet{
     margin-left: 30px;
+}
+
+.panel-body{
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.panel{
+    background: white;
+    border:none;
+}
+
+.dashboard-element.medium{
+    height: 420px;
+    margin-bottom: 20px;
+}
+
+.dashboard-element.large{
+    height: 530px;
+    margin-bottom: 20px;
+}
+
+.dashboard-element.validate{
+    height: 500px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.clndr-control-button{
+    font-size: 12px;
+}
+
+.clndr-control-button{
+    margin: 0;
+}
+
+.list-group-item.calendar{
+    border: none;
+    font-size: 12px;
+    height: auto;
+}
+
+.btn-calendar{
+    background-color: #5284af;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 10px;
+    outline: none;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
+}
+
+.dl-horizontal dt, dd{
+ text-align: left;
+ margin-left: 20px;
+}
+
+.footer{
+    position:absolute;
+    bottom: 50px;
+}
+
+.form-control.comentarios{
+    width: 113%;
+}
+
+i.approve{
+  color: #6fc833;
+  font-size: 50px;
+  margin-bottom: 20px;
+  margin-left: 90px;
+}
+
+i.reject{
+    color:#bd1f30;
+    font-size: 50px;
 }
