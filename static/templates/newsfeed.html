@@ -1,0 +1,82 @@
+{% extends 'components/newsfeed_base.html' %}
+{% block content %}
+<script>
+	$(window).load(function () {
+        $('.Collage').collagePlus(
+		{
+			'targetHeight' : 400,
+		}
+		);
+    });
+</script>
+<div class="row">
+	<div class="Collage">
+		<img src="{{ MEDIA_URL }}/images/user/3.jpg" />
+		<img src="{{ MEDIA_URL }}/images/user/2.jpg" />
+		<img src="{{ MEDIA_URL }}/images/user/1.jpg" />
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="panel panel-default post">
+		  <div class="panel-body">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object" src="{{ MEDIA_URL }}/images/university/stanford.png" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<h4 class="media-heading">Stanford University <small>20 de Marzo 2015</small></h4>
+				¡Estamos lanzando nuestra segunda jornada de competencias de programación! Regístrate ahora en el siguiente link: <a href="#">stanford.edu</a>
+			  </div>
+			</div>
+			</br>
+			<input type="text" class="form-control" placeholder="Comentarios">
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="panel panel-default post">
+		  <div class="panel-body">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object" src="{{ MEDIA_URL }}/images/university/codeit.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<h4 class="media-heading">Code It Asociación de Alumnos <small>18 de Marzo 2015</small></h4>
+				¿Ya se unieron a GameOn? Inscríbanse ya y reciban una playera de regalo. <a href="#">codeit.org</a>
+			  </div>
+			</div>
+			</br>
+			<input type="text" class="form-control" placeholder="Comentarios">
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="panel panel-default post">
+		  <div class="panel-body">
+			<div class="media">
+			  <div class="media-left">
+				<a href="#">
+				  <img class="media-object" src="{{ MEDIA_URL }}/images/itam_logo.jpg" alt="...">
+				</a>
+			  </div>
+			  <div class="media-body">
+				<h4 class="media-heading">ITAM <small>16 de Marzo 2015</small></h4>
+				¡Primer congreso de emprendimiento por parte del ITAM! Son bienvenidos todos los estudiantes universitarios. Inscripción: <a href="#">itam.edu</a>
+			  </div>
+			</div>
+			</br>
+			<input type="text" class="form-control" placeholder="Comentarios">
+		  </div>
+		</div>
+	</div>
+</div>
+{% endblock %}

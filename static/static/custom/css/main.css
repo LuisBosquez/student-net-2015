@@ -3,6 +3,11 @@ h1, h2, h3, p, a, small
 	font-family: 'Rosario', sans-serif;
 }
 
+body
+{
+	font-size:16px;
+}
+
 small
 {
 	font-size:80%;
@@ -298,4 +303,33 @@ dl.content
 img.content
 {
 	
+}
+/* In your CSS */
+.Collage
+{
+    padding:14px;
+	background:#A9BCD0;
+	margin:auto;
+}
+
+.Collage img
+{
+    vertical-align:top;
+	width:300px;
+}
+
+.Collage img:hover
+{
+	transform:scale(1.1,1.1);
+}
+
+div.post
+{
+	background:#F5F5F5;
+	margin:1em;
+}
+
+img.media-object
+{
+	width:40px;
 }

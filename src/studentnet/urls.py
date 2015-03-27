@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 	url(r'^groups/', 'university_dashboard.views.groups', name='groups'),
 	url(r'^members/', 'university_dashboard.views.members', name='members'),
 	url(r'tasks/$', 'university_dashboard.views.tasks', name='tasks'),
+	url(r'inicio$', 'newsfeed.views.home', name='newsfeed'),
 	
 	url(r'^tasks/new/$', 'task_manager.views.createTask', name='createTask'),
     # url(r'^blog/', include('blog.urls')),
