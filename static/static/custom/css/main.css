@@ -133,17 +133,16 @@ i.fa
 {
 	margin:2em;
 }
-#group-intro em
+.group-intro em
 {
 	margin:12px 0 ;
 }
 
-#group-progress
+.group-progress
 {
-	background:#E0E0E0;
+	background:white;
 	padding:1em;
 	border-radius: 6px;
-	background:rgba(66,139,202,0.4);
 }
 	#group-progress div.progress
 	{
@@ -304,7 +303,8 @@ img.content
 {
 	
 }
-/* In your CSS */
+
+* In your CSS */
 .Collage
 {
     padding:14px;
@@ -332,4 +332,58 @@ div.post
 img.media-object
 {
 	width:40px;
+}
+
+.navbar-inverse{
+  background-color: #0039a6;
+
+}
+
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-nav>li>a:visited{
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    color: #9d9d9d;
+}
+
+.navbar-inverse .navbar-brand{
+    color: white;
+}
+
+
+.social-icons i{
+    font-size: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.btn-default{
+    border:none;
+    background: rgb(33, 181, 158);
+    color: white;
+}
+
+.btn-default:hover{
+    border:none;
+    background: rgb(20, 143, 125);
+    color: white;
+}
+
+dd a, dd a:hover{
+    color: #777;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.group-snippet{
+    margin-top:20px;
+}
+
+h4{
+    margin-top:20px;
+}
+
+.snippet{
+    margin-left: 30px;
 }
